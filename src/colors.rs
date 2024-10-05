@@ -1,15 +1,15 @@
 const HEX_VALUES: [char; 22] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'];
 
 #[derive(Debug)]
-pub struct ColorBinary{
+pub struct ColorRGB{
     pub red: u8,
     pub green: u8,
     pub blue: u8,
 }
 
-impl ColorBinary {
+impl ColorRGB {
     pub fn new() -> Self {
-        ColorBinary {
+        ColorRGB {
             red: 0,
             green: 0,
             blue: 0,
@@ -115,14 +115,14 @@ impl ColorHSL {
 }
 
 pub enum ColorRep {
-    Binary(ColorBinary),
+    RGB(ColorRGB),
     Hex(ColorHex),
     HSL(ColorHSL),
 }
 
 impl ColorRep {
-    pub fn new_binary() -> Self {
-        ColorRep::Binary(ColorBinary::new())
+    pub fn new_rgb() -> Self {
+        ColorRep::RGB(ColorRGB::new())
     }
     pub fn new_hex() -> Self {
         ColorRep::Hex(ColorHex::new())

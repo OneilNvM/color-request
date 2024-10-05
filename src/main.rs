@@ -10,7 +10,7 @@ fn main() {
 
         println!("Select which color value representation to use:\n");
 
-        println!("1: Binary\n2: Hex\n3: HSL");
+        println!("1: RGB\n2: Hex\n3: HSL");
 
         let mut choice_1 = String::new();
 
@@ -20,7 +20,7 @@ fn main() {
             let _cfinal: u8 = match choice_1.trim().parse() {
                 Ok(num) => match num {
                     1 => {
-                        color_representation = ColorRep::new_binary();
+                        color_representation = ColorRep::new_rgb();
                         break 'color_rep;
                     }
                     2 => {
@@ -45,8 +45,8 @@ fn main() {
         }
 
         match color_representation {
-            ColorRep::Binary(mut binary) => {
-                println!("-- Binary Mode --");
+            ColorRep::RGB(mut binary) => {
+                println!("-- RGB Mode --");
                 println!("Please insert values seperated with a space:");
 
                 let mut str = String::new();
